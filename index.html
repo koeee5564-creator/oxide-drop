@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxide Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">🔥 OXIDE DROP</div>
+            <div class="balance-box">🪙 <span id="coins">700</span></div>
+        </header>
+
+        <!-- Вкладка: Кейсы -->
+        <main id="tab-cases" class="tab-content">
+            <h2 class="section-title">БАТЛ ПАСС БОКСЫ</h2>
+            <div class="battlepass-card" onclick="openFrostCase()">
+                <div class="bp-tag">BATTLE PASS</div>
+                <div class="bp-info">
+                    <h3>МОРОЗНАЯ ЯРОСТЬ</h3>
+                    <div class="bp-price-btn">🪙 350</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Вкладка: Апгрейд -->
+        <main id="tab-upgrade" class="tab-content hidden">
+            <h2 class="section-title">АПГРЕЙД ПРЕДМЕТОВ</h2>
+            <p style="font-size: 12px; color: #8f909e;">Шанс успеха: 50%</p>
+            <div id="upgrade-my-items" class="frost-grid" style="margin-bottom: 15px;"></div>
+            <button class="action-btn" onclick="performUpgrade()">УЛУЧШИТЬ</button>
+        </main>
+
+        <!-- Вкладка: Инвентарь -->
+        <main id="tab-inventory" class="tab-content hidden">
+            <h2 class="section-title">ИНВЕНТАРЬ</h2>
+            <div class="inventory-stats">
+                <div>Предметов: <b id="inv-count">0</b></div>
+                <div>Стоимость: <b id="inv-total">🪙 0</b></div>
+            </div>
+            <div id="inventory-grid" class="frost-grid"></div>
+        </main>
+
+        <!-- Вкладка: Задания -->
+        <main id="tab-quests" class="tab-content hidden">
+            <h2 class="section-title">ЗАДАНИЯ</h2>
+            <div class="quest-item">
+                <span>Подпишись на канал<br><b>🪙 +400</b></span>
+                <button class="action-btn" style="width: auto; padding: 6px 12px;" onclick="coins += 400; document.getElementById('coins').innerText = coins; alert('Награда получена!')">Забрать</button>
+            </div>
+        </main>
+
+        <!-- Вкладка: Профиль -->
+        <main id="tab-profile" class="tab-content hidden">
+            <h2 class="section-title">ПРОФИЛЬ</h2>
+            <div class="profile-box">
+                <p>Ваш ID: <b>#88412</b></p>
+                <button class="action-btn" onclick="coins += 1000; document.getElementById('coins').innerText = coins; alert('Баланс пополнен!')">Пополнить 1000 монет</button>
+            </div>
+        </main>
+
+        <!-- Модальное окно выигрыша -->
+        <div id="case-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>ВЫ ВЫИГРАЛИ!</h3>
+                <img id="modal-item-img" src="" alt="item">
+                <div id="modal-item-name" style="font-weight: bold; margin: 10px 0; font-size: 13px;"></div>
+                <div id="modal-item-price" class="price"></div>
+                <button class="action-btn" onclick="closeModals();">Отлично</button>
+            </div>
+        </div>
+
+        <!-- Нижняя навигация (с передачей элемента `this`) -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" onclick="switchTab('cases', this)">📦 Кейсы</button>
+            <button class="nav-btn" onclick="switchTab('upgrade', this)">⚡ Апгрейд</button>
+            <button class="nav-btn" onclick="switchTab('quests', this)">📋 Задания</button>
+            <button class="nav-btn" onclick="switchTab('inventory', this)">💼 Инвентарь</button>
+            <button class="nav-btn" onclick="switchTab('profile', this)">👤 Профиль</button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
