@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxide Drop - Survival Cases</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Шапка -->
+        <header>
+            <div class="logo">☢️ OXIDE DROP</div>
+            <div class="balance-box">
+                🪙 <span id="coins">5000</span>
+            </div>
+        </header>
+
+        <!-- Основной экран -->
+        <main>
+            <h2 class="section-title">Ящики с лутом</h2>
+            <div class="cases-grid">
+                <!-- Обычный ящик -->
+                <div class="case-card">
+                    <div class="case-icon">📦</div>
+                    <h3>Малый ящик</h3>
+                    <p class="price">🪙 150</p>
+                    <button onclick="openCase(150, 'small')">Обыскать</button>
+                </div>
+                <!-- Элитный ящик -->
+                <div class="case-icon-box case-card">
+                    <div class="case-icon">☣️</div>
+                    <h3>Военный ящик</h3>
+                    <p class="price">🪙 500</p>
+                    <button onclick="openCase(500, 'military')">Обыскать</button>
+                </div>
+            </div>
+
+            <!-- Результат выпадения -->
+            <div id="result-box" class="result-box hidden">
+                <h3>Вы нашли лут:</h3>
+                <div id="dropped-item" class="dropped-item">---</div>
+            </div>
+        </main>
+
+        <!-- Навигация -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active">Лутать</button>
+            <button class="nav-btn" onclick="alert('Пополнение баланса и вывод будут доступны через Telegram-бота!')">Баланс</button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
