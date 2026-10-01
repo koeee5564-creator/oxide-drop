@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frost Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><div class="app"><header class="header">
+    <div>
+        <div class="logo">FROST<span>DROP</span></div>
+        <div class="subtitle">CASE SIMULATOR</div>
+    </div>
+
+    <div class="balance-box">
+        🪙 <strong id="balance">700</strong>
+    </div>
+</header>
+
+
+<!-- КЕЙСЫ -->
+
+<section id="casesPage" class="page">
+
+    <div class="page-title">
+        <h1>Кейсы</h1>
+        <p>Открывай кейсы и получай редкие предметы</p>
+    </div>
+
+    <div class="case-card">
+
+        <div id="caseBox" class="case-image">
+            ❄️
+        </div>
+
+        <h2>Морозная ярость</h2>
+
+        <p class="case-description">
+            Случайный зимний предмет
+        </p>
+
+        <div class="case-price">
+            🪙 350
+        </div>
+
+        <button id="openCaseBtn" class="main-button">
+            ОТКРЫТЬ КЕЙС
+        </button>
+
+    </div>
+
+    <h3 class="section-title">
+        Возможные предметы
+    </h3>
+
+    <div id="caseItems" class="items-grid"></div>
+
+</section>
+
+
+<!-- АПГРЕЙД -->
+
+<section id="upgradePage" class="page hidden">
+
+    <div class="page-title">
+        <h1>Апгрейд</h1>
+        <p>Выбери предмет и более дорогую цель</p>
+    </div>
+
+    <div id="upgradeEmpty" class="empty-box">
+        <div>⚡</div>
+        <h3>Нет предметов</h3>
+        <p>Открой кейс и получи предмет.</p>
+    </div>
+
+    <div id="upgradeContent" class="hidden">
+
+        <div class="upgrade-arena">
+
+            <div class="upgrade-slot">
+
+                <span>ТВОЙ ПРЕДМЕТ</span>
+
+                <div id="selectedItem"
+                     class="upgrade-card">
+                    <b>?</b>
+                </div>
+
+            </div>
+
+            <div class="upgrade-arrow">
+                →
+            </div>
+
+            <div class="upgrade-slot">
+
+                <span>ЦЕЛЬ</span>
+
+                <div id="targetItem"
+                     class="upgrade-card">
+                    <b>?</b>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="chance-box">
+            <span>Шанс успеха</span>
+            <strong>50%</strong>
+        </div>
+
+        <div id="upgradeAnimation"
+             class="upgrade-animation hidden">
+
+            <div class="upgrade-light"></div>
+
+            <strong id="upgradeResultText">
+                ПРОВЕРКА...
+            </strong>
+
+        </div>
+
+        <button id="upgradeBtn"
+                class="main-button"
+                disabled>
+            ⚡ АПГРЕЙД
+        </button>
+
+        <button id="cancelUpgradeBtn"
+                class="secondary-button">
+            СБРОСИТЬ
+        </button>
+
+
+        <h3 class="section-title">
+            1. Выбери свой предмет
+        </h3>
+
+        <div id="upgradeInventory"
+             class="items-grid">
+        </div>
+
+
+        <h3 class="section-title">
+            2. Выбери цель
+        </h3>
+
+        <div id="targetInventory"
+             class="items-grid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ЗАДАНИЯ -->
+
+<section id="tasksPage" class="page hidden">
+
+    <div class="page-title">
+        <h1>Задания</h1>
+        <p>Получай бесплатные монеты</p>
+    </div>
+
+    <div class="task-card">
+
+        <div class="task-icon">
+            🎁
+        </div>
+
+        <div class="task-info">
+            <h3>Ежедневная награда</h3>
+            <p>Получить +400 монет</p>
+        </div>
+
+        <button id="rewardBtn"
+                class="small-button">
+            +400
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ИНВЕНТАРЬ -->
+
+<section id="inventoryPage" class="page hidden">
+
+    <div class="page-title">
+        <h1>Инвентарь</h1>
+        <p id="inventoryCount">Предметов: 0</p>
+    </div>
+
+    <div id="inventoryGrid"
+         class="inventory-grid">
+    </div>
+
+    <div id="inventoryEmpty"
+         class="empty-box">
+
+        <div>💼</div>
+        <h3>Инвентарь пуст</h3>
+        <p>Открой кейс, чтобы получить предмет.</p>
+
+    </div>
+
+</section>
+
+
+<!-- ПРОФИЛЬ -->
+
+<section id="profilePage" class="page hidden">
+
+    <div class="page-title">
+        <h1>Профиль</h1>
+        <p>Твой игровой профиль</p>
+    </div>
+
+    <div class="profile-card">
+
+        <div class="avatar">
+            👤
+        </div>
+
+        <h2>Игрок</h2>
+
+        <p class="profile-id">
+            ID: #FROST001
+        </p>
+
+        <div class="profile-stats">
+
+            <div>
+                <strong id="profileBalance">
+                    700
+                </strong>
+                <small>Монет</small>
+            </div>
+
+            <div>
+                <strong id="profileItems">
+                    0
+                </strong>
+                <small>Предметов</small>
+            </div>
+
+        </div>
+
+        <button id="addCoinsBtn"
+                class="main-button">
+            🪙 +400 МОНЕТ
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- НАВИГАЦИЯ -->
+
+<nav class="bottom-nav">
+
+    <button class="nav-button active"
+            data-page="casesPage">
+        <span>📦</span>
+        <small>Кейсы</small>
+    </button>
+
+    <button class="nav-button"
+            data-page="upgradePage">
+        <span>⚡</span>
+        <small>Апгрейд</small>
+    </button>
+
+    <button class="nav-button"
+            data-page="tasksPage">
+        <span>📋</span>
+        <small>Задания</small>
+    </button>
+
+    <button class="nav-button"
+            data-page="inventoryPage">
+        <span>💼</span>
+        <small>Инвентарь</small>
+    </button>
+
+    <button class="nav-button"
+            data-page="profilePage">
+        <span>👤</span>
+        <small>Профиль</small>
+    </button>
+
+</nav>
+
+</div><!-- АНИМАЦИЯ КЕЙСА --><div id="caseModal"
+     class="modal hidden"><div class="modal-bg"></div>
+
+<div class="opening-box">
+
+    <h3>ОТКРЫТИЕ КЕЙСА</h3>
+
+    <div class="roulette">
+
+        <div class="roulette-center"></div>
+
+        <div id="rouletteTrack"
+             class="roulette-track">
+        </div>
+
+    </div>
+
+    <p id="openingStatus">
+        Определяем предмет...
+    </p>
+
+</div>
+
+</div><!-- ВЫИГРЫШ --><div id="winModal"
+     class="modal hidden"><div class="modal-bg"></div>
+
+<div class="win-box">
+
+    <button id="closeModal"
+            class="close-button">
+        ×
+    </button>
+
+    <div class="win-icon">
+        🎉
+    </div>
+
+    <h2>Вы выиграли!</h2>
+
+    <p>Ваш предмет:</p>
+
+    <div id="wonItem"></div>
+
+    <button id="modalOkBtn"
+            class="main-button">
+        ЗАБРАТЬ
+    </button>
+
+</div>
+
+</div><script src="script.js"></script></body>
+</html>
