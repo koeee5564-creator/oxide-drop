@@ -1,0 +1,56 @@
+body {
+    background-color: #121216;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e24;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.balance {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cases-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.case-card {
+    background: #1e1e24;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+}
+
+.case-card button {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.case-card button:hover {
+    background: #5b4cc4;
+}
